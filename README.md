@@ -14,22 +14,6 @@ A simple **web crawler written in C++** that uses `libcurl` to fetch web pages a
 
 ---
 
-## 📁 Directory Structure
-
-Web-Crawler/
-├── include/
-│ └── WebCrawler.h # Class definition
-├── src/
-│ ├── Crawler.cpp # Implementation
-│ └── main.cpp # Entry point
-├── libcurl-x64.dll # (Optional) Required DLL for curl
-├── main.exe # Compiled binary (not version controlled)
-├── .gitignore # Ignores executable and build files
-└── README.md # This file
-
-
----
-
 ## ⚙️ Compilation & Setup (MSYS2 + clang++)
 
 ### ✅ Prerequisites
@@ -58,18 +42,18 @@ clang++ src/main.cpp src/Crawler.cpp \
 ```
 
 ### 🧠 How It Works
-WebCrawler::Crawl
-Uses a std::queue to BFS crawl through links.
+    WebCrawler::Crawl
+    Uses a std::queue to BFS crawl through links.
 
-Prints each visited URL and tracks with std::unordered_set.
+    Prints each visited URL and tracks with std::unordered_set.
 
-WebCrawler::ReadRawHtml
-Uses libcurl to fetch page content.
+    WebCrawler::ReadRawHtml
+    Uses libcurl to fetch page content.
 
-Sets headers (like User-Agent) and disables SSL verification for ease.
+     Sets headers (like User-Agent) and disables SSL verification for ease.
 
-WebCrawler::GetLinksFromHtml
-Applies std::regex to extract http and https URLs from page.
+    WebCrawler::GetLinksFromHtml
+    Applies std::regex to extract http and https URLs from page.
 
 
 ### 🖥️ Example Output
